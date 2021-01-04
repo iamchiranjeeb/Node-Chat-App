@@ -7,6 +7,7 @@ const $messageFormButton = $messageForm.querySelector('#btn1')
 const $locationButton = document.querySelector('#send-location')
 const $messages = document.querySelector('#messages')
 const $currentLocation = document.querySelector('#current-location')
+const $logOutButton = document.querySelector('#logOut')
     //Template
 const messageTemplate = document.querySelector('#message-template').innerHTML
 const locationTemplate = document.querySelector('#location-template').innerHTML
@@ -111,6 +112,10 @@ $locationButton.addEventListener('click', () => {
             console.log('Location Shared.')
         })
     })
+})
+
+$logOutButton.addEventListener('click', () => {
+    location.href = '/'
 })
 
 socket.emit('join', { username, room }, (err) => {
